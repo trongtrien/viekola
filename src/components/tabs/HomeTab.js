@@ -7,7 +7,7 @@ import HomeScreen from '../../screens/Stack/HomeStack';
 import StudyScreen from '../../screens/StudyScreen';
 import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
-import StudyStackScreen from '../../screens/setting/SettingScreen';
+import StudyStackScreen from '../../screens/testScree';
 
 
 const Tab = createBottomTabNavigator();
@@ -24,11 +24,12 @@ export default function HomeTab() {
     }}
   >
     <Tab.Screen
+      name="Home"
       component={HomeScreen}
       options={{
         tabBarLabelStyle: styles.tab,
         headerShown:false,
-        tabBarLabel: 'Home',
+        tabBarLabel: 'Homes',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={20} style={styles.icon}/>
         )
