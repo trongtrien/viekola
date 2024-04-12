@@ -21,7 +21,7 @@ export default function StudyStackScreen() {
               headerStyle: {
                 backgroundColor: color.statusbar_bg
               },headerTintColor: color.text_light}}
-              name="Home"
+              name="HomeScreen"
               component={HomeScreen} />
     </HomeStack.Navigator>
   );

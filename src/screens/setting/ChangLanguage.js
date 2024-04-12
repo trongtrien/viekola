@@ -5,6 +5,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { useTranslation } from 'react-i18next';
 import { color } from '../../contans/color';
 import 'intl-pluralrules';
+import '../../i18n/i18n.config'
 
 const data = [
   { label: 'Tiếng Việt', value: 'vi' },

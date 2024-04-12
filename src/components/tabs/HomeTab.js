@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Text, View, Button, StatusBar } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { color } from '../../contans/color'
@@ -9,16 +9,11 @@ import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
 import StudyStackScreen from '../../screens/setting/SettingScreen';
 
-import 'intl-pluralrules';
-import '../../i18n/i18n.config'
-import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
-const { t } = useTranslation()
 export default function HomeTab() {
   return (
     <Tab.Navigator
-    initialRouteName="Home"
     screenOptions={{
       tabBarActiveTintColor: '#fff',
       tabBarLabelStyle: styles.icon,
@@ -29,12 +24,11 @@ export default function HomeTab() {
     }}
   >
     <Tab.Screen
-      name="Home"
       component={HomeScreen}
       options={{
         tabBarLabelStyle: styles.tab,
         headerShown:false,
-        tabBarLabel: t('Home'),
+        tabBarLabel: 'Home',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={20} style={styles.icon}/>
         )
