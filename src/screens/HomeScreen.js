@@ -6,7 +6,7 @@ const HomeScreen = ({navigation}) => {
     <View>
       <Text>Home Screen</Text>
       <Pressable onPress={()=> navigation.navigate('StudyScreen')}>
-      <Text>Gô to</Text></Pressable>
+      <Text>Let's Go</Text></Pressable>
     </View>
   )
 }
