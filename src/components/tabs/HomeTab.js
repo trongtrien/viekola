@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Button, StatusBar } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { color } from '../../contans/color'
@@ -7,15 +7,20 @@ import HomeScreen from '../../screens/Stack/HomeStack';
 import StudyScreen from '../../screens/StudyScreen';
 import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
-import StudyStackScreen from '../../screens/testScree';
+import StudyStackScreen from '../../screens/setting/SettingScreen';
+
+import 'intl-pluralrules';
+import '../../i18n/i18n.config'
+import { useTranslation } from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
+const { t } = useTranslation()
 export default function HomeTab() {
   return (
     <Tab.Navigator
     initialRouteName="Home"
     screenOptions={{
-      tabBarActiveTintColor: '#123',
+      tabBarActiveTintColor: '#fff',
       tabBarLabelStyle: styles.icon,
       tabBarStyle: {
         backgroundColor: color.bg_main,
@@ -24,22 +29,15 @@ export default function HomeTab() {
     }}
   >
     <Tab.Screen
-      name="Home t"
+      name="Home"
       component={HomeScreen}
       options={{
-        headerShown: false,
         tabBarLabelStyle: styles.tab,
-        tabBarLabel: 'Home b',
+        headerShown:false,
+        tabBarLabel: t('Home'),
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={20} style={styles.icon}/>
-        ),
-        headerRight: () => (
-            <Button
-              onPress={() => alert('This is a button!')}
-              title="Info"
-              color="#000"
-            />
-          )
+        )
       }}
     />
     <Tab.Screen

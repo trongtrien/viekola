@@ -1,8 +1,9 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Button, Pressable } from 'react-native'
 import { color } from "../../contans/color"; 
 import HomeScreen from "../HomeScreen";
-import CourseScreen from "../CourseScreen";
 
 export default function StudyStackScreen() {
   const HomeStack = createNativeStackNavigator();
@@ -10,10 +11,16 @@ export default function StudyStackScreen() {
     <HomeStack.Navigator>
           <HomeStack.Screen
             options={{
-              title: 'Trang ',
+              title: 'Epstopikvn',
+              headerRight: () => (
+            <Pressable
+              onPress={() => alert('This is a button!')} >
+            <MaterialCommunityIcons name="account" color={color.text_light} size={35}/>
+            </Pressable>
+          ),
               headerStyle: {
                 backgroundColor: color.statusbar_bg
-              },headerTintColor: '#fff'}}
+              },headerTintColor: color.text_light}}
               name="Home"
               component={HomeScreen} />
     </HomeStack.Navigator>
