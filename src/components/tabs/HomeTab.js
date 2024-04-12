@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { StyleSheet, Text, View, Button, StatusBar } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { color } from '../../contans/color'
@@ -16,8 +16,10 @@ export default function HomeTab() {
     initialRouteName="Home"
     screenOptions={{
       tabBarActiveTintColor: '#123',
+      tabBarLabelStyle: styles.icon,
       tabBarStyle: {
-        backgroundColor: color.bg_main
+        backgroundColor: color.bg_main,
+        height: 50
       }
     }}
   >
@@ -29,7 +31,7 @@ export default function HomeTab() {
         tabBarLabelStyle: styles.tab,
         tabBarLabel: 'Home b',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="home" color={color} size={size} />
+          <MaterialCommunityIcons name="home" color={color} size={20} style={styles.icon}/>
         ),
         headerRight: () => (
             <Button
@@ -48,7 +50,7 @@ export default function HomeTab() {
         tabBarLabelStyle: styles.tab,
         tabBarLabel: 'Học tập',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="lead-pencil" color={color} size={size} />
+          <MaterialCommunityIcons name="lead-pencil" color={color} size={20} style={styles.icon}/>
         ),
       }}
     />
@@ -60,7 +62,7 @@ export default function HomeTab() {
         tabBarLabelStyle: styles.tab,
         tabBarLabel: 'Khóa học',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="book-open" color={color} size={size} />
+          <MaterialCommunityIcons name="book-open" color={color} size={20} style={styles.icon}/>
         ),
       }}
     />
@@ -72,7 +74,7 @@ export default function HomeTab() {
         tabBarLabelStyle: styles.tab,
         tabBarLabel: 'Tài liệu',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="file-document" color={color} size={size} />
+          <MaterialCommunityIcons name="file-document" color={color} size={20} style={styles.icon}/>
         ),
       }}
     />
@@ -84,7 +86,7 @@ export default function HomeTab() {
         tabBarLabelStyle: styles.tab,
         tabBarLabel: 'Thông tin',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="information" color={color} size={size} />
+          <MaterialCommunityIcons name="information" color={color} size={20} style={styles.icon}/>
         ),
       }}
     />
@@ -95,6 +97,10 @@ export default function HomeTab() {
 const styles = StyleSheet.create({
     tab: {
         position: 'absolute',
-        bottom: 3
-    }
+        bottom: 6
+    },
+    icon: {
+      position: 'absolute',
+      top: 6
+  }
 })
