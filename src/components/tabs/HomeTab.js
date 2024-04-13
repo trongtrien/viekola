@@ -7,7 +7,7 @@ import HomeScreen from '../../screens/Stack/HomeStack';
 import StudyScreen from '../../screens/Stack/StudyStack';
 import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
-import Settings from '../../screens/testScree';
+import Settings from '../../screens/SettingScreen';
 
 export default function HomeTab() {
   const Tab = createBottomTabNavigator();
