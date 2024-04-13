@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Button, StatusBar } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { color } from '../../contans/color'
@@ -9,9 +9,8 @@ import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
 import StudyStackScreen from '../../screens/testScree';
 
-
-const Tab = createBottomTabNavigator();
 export default function HomeTab() {
+  const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator
     screenOptions={{

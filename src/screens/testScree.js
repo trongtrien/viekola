@@ -15,7 +15,7 @@ import i18next, {languageResources} from '../i18n/service/i18next';
 import {useTranslation} from 'react-i18next';
 import languagesList from '../i18n/service/languageList.json';
 
-export default function StudyStackScreen() {
+export default function Setting() {
   const HomeStack = createNativeStackNavigator();
   return (
     <HomeStack.Navigator>
