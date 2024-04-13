@@ -4,10 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { color } from '../../contans/color'
 import HomeScreen from '../../screens/Stack/HomeStack';
-import StudyScreen from '../../screens/StudyScreen';
+import StudyScreen from '../../screens/Stack/StudyStack';
 import DocScreen from '../../screens/DocScreen';
 import CourseScreen from '../../screens/CourseScreen';
-import StudyStackScreen from '../../screens/testScree';
+import Settings from '../../screens/testScree';
 
 export default function HomeTab() {
   const Tab = createBottomTabNavigator();
@@ -72,7 +72,7 @@ export default function HomeTab() {
     />
     <Tab.Screen
       name="InfoScreen"
-      component={StudyStackScreen}
+      component={Settings}
       options={{
         headerShown: false,
         tabBarLabelStyle: styles.tab,
